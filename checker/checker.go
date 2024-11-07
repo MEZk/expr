@@ -939,6 +939,7 @@ func (v *checker) checkFunction(f *builtin.Function, node ast.Node, arguments []
 	return v.error(node, "no matching overload for %v", f.Name)
 }
 
+// TODO:
 func (v *checker) checkArguments(
 	name string,
 	fn Nature,

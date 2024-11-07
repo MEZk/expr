@@ -178,6 +178,15 @@ func (Foo) Method() Bar {
 	}
 }
 
+func (Foo) MethodWithSliceArguments(args []string) bool {
+	for _, a := range args {
+		if strings.HasPrefix(a, "prefix") {
+			return true
+		}
+	}
+	return false
+}
+
 func (f Foo) MethodWithArgs(prefix string) string {
 	return prefix + f.Value
 }
