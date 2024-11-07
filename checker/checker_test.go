@@ -133,7 +133,7 @@ func TestCheck(t *testing.T) {
 		{"Bool ?? Bool"},
 		{"let foo = 1; foo == 1"},
 		{"(Embed).EmbedPointerEmbedInt > 0"},
-		{"Foo.MethodWithSliceArguments([\"a\", \"prefix\"]) == true"},
+		{"Foo.MethodWithSliceArguments([true, \"prefix\"]) == true"},
 	}
 
 	for _, tt := range tests {

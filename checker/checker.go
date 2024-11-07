@@ -1039,6 +1039,13 @@ func (v *checker) checkArguments(
 			}
 		}
 
+		if isArray(argNature) && i >= fnNumIn-1 {
+			// If is an array we already checked that all elements have same typa (see checker.ArrayNode).
+			// We need to get array element type.
+			argNature = argNature.Elem()
+			in = fn.In(fn.NumIn() - 1).Elem()
+		}
+
 		// Check if argument is assignable to the function input type.
 		// We check original type (like *time.Time), not dereferenced type,
 		// as function input type can be pointer to a struct.
